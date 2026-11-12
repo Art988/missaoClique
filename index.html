@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111114">
+  <meta name="description" content="Uma aventura de informática básica com missões práticas, inspirada no universo visual de Roblox. Apresentação offline para o 7º ano.">
+  <title>Missão Clique · Seu primeiro mundo digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="toolbar">
+      <button class="brand" data-goto="0" aria-label="Missão Clique: voltar à primeira tela"><svg class="brand-cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v18l5-5 4 7 4-2-4-7h8z" fill="currentColor"/></svg><span>MISSÃO<span class="brand-light">CLIQUE</span></span></button>
+      <div class="phase-status"><span class="status-dot"></span><span id="phaseLabel">Entrada no mundo</span><div class="phase-segments" aria-hidden="true"><i class="phase-segment"></i><i class="phase-segment"></i><i class="phase-segment"></i></div></div>
+      <nav class="toolbar-actions" aria-label="Ferramentas da apresentação">
+        <span class="award-indicator" title="Missões concluídas"><span>⚑</span><b id="awardCount">0/3</b></span>
+        <button id="openMap" class="tool-button" title="Mapa da aventura (M)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m2 5 7-3 6 3 7-3v17l-7 3-6-3-7 3zM9 2v17m6-14v17"/></svg><span>Mapa</span></button>
+        <button id="openNotes" class="tool-button icon-only" aria-label="Notas para conduzir a aula (N)" aria-expanded="false" aria-controls="notesPanel" title="Notas do instrutor (N)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 3h16v18H4zM8 8h8M8 12h8M8 16h5"/></svg></button>
+        <button id="fullScreen" class="tool-button icon-only" aria-label="Alternar tela cheia (F)" aria-pressed="false" title="Tela cheia (F)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2H2v6m14-6h6v6M2 16v6h6m14-6v6h-6"/></svg></button>
+        <button id="openHelp" class="tool-button icon-only" aria-label="Ajuda e atalhos" title="Ajuda (?)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 1 1 5 2c-2 1-2 2-2 3m0 4h.1"/></svg></button>
+      </nav>
+    </header>
+    <main id="stage" class="stage"><div class="hero-background" aria-hidden="true"></div><div class="stage-corner" aria-hidden="true">MC / 01</div><div id="slides"></div></main>
+    <footer class="navigation"><div class="slide-count"><strong id="slideNumber">01</strong><span>/ <span id="slideTotal">30</span></span><span class="slide-label" id="slideLabel">Boas-vindas</span></div><span class="nav-hint">Use as setas para explorar <kbd>←</kbd><kbd>→</kbd></span><div class="nav-buttons"><button id="prev" class="nav-button" aria-label="Tela anterior">←</button><button id="next" class="nav-button next-button" aria-label="Próxima tela"><span>Próximo</span> →</button></div></footer>
+    <div id="progressBar" class="progress-bar" role="progressbar" aria-label="Posição na apresentação" aria-valuemin="1" aria-valuemax="30" aria-valuenow="1"><span id="progressFill"></span></div>
+  </div>
+  <aside class="notes-panel" id="notesPanel" aria-label="Notas do instrutor" hidden><div><span class="eyebrow red">PARA CONDUZIR A AULA</span><button id="closeNotes" class="dialog-close" aria-label="Fechar notas">×</button></div><h2 id="noteTitle"></h2><p id="noteText"></p><small>Este painel aparece na projeção enquanto estiver aberto. Use N para fechá-lo antes de demonstrar.</small></aside>
+  <dialog id="mapDialog" class="map-dialog"><div class="dialog-top"><div><span class="eyebrow red">ESCOLHA SEU CAMINHO</span><h2>Mapa da aventura</h2></div><button class="dialog-close" id="closeMap" aria-label="Fechar mapa">×</button></div><div id="mapList"></div></dialog>
+  <dialog id="helpDialog" class="help-dialog"><div class="dialog-top"><div><span class="eyebrow red">SEU GUIA</span><h2>Como explorar</h2></div><button class="dialog-close" id="closeHelp" aria-label="Fechar ajuda">×</button></div><div class="help-shortcuts"><p><kbd>←</kbd><kbd>→</kbd><span>Tela anterior e próxima tela</span></p><p><kbd>M</kbd><span>Mapa com todas as telas</span></p><p><kbd>N</kbd><span>Notas para conduzir a aula</span></p><p><kbd>F</kbd><span>Entrar ou sair de tela cheia</span></p><p><kbd>Home</kbd><kbd>End</kbd><span>Primeira e última tela</span></p></div><p>Esta apresentação funciona sem internet. Os treinos aqui não modificam os arquivos do seu computador.</p><p>As conquistas e a autoavaliação ficam neste navegador. Na última tela, Jogar Novamente limpa o progresso e os treinos para a próxima pessoa usar o mesmo computador.</p><p class="credits">Missão Clique. Criação educacional independente, inspirada no universo visual de Roblox. Conteúdo baseado no roteiro “Introdução ao Mundo Digital” fornecido para esta aula. Ilustração criada para esta apresentação.</p></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div><div id="celebration" aria-hidden="true"></div><div id="liveAnnouncement" class="sr-only" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
